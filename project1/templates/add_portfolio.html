@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% block content %}
+<main id="main">
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+    
+            <div class="section-title">
+            <h2>Portfolio</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                    
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <label for="name">name : </label>
+                        <input type="text" id="name" class="form-control" placeholder="name" name='name'>
+                    </div>
+                    <div class="col">
+                        <label for="categorie"> categorie : </label>
+                        <input type="text" id='categorie' class="form-control" placeholder="categorie" name='categorie'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="image">Picture : </label>
+                        <input type="file" class="form-control" name='image'>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">description : </label>
+                    <textarea class="form-control" placeholder="Your description" type="text" id='description' name='description' rows="3"></textarea>
+                </div>            
+            <button class='btn btn-primary' type="submit">Add Services</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}
